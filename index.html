@@ -4,9 +4,9 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="es">
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Víctor M. Batlle</title>
+		<title>Víctor Martínez</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,6 +16,13 @@
         <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/53eb40d10ab4220838a143d26a1bcc63?d=mp&s=48" sizes="48x48">
         <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/53eb40d10ab4220838a143d26a1bcc63?d=mp&s=64" sizes="64x64">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@Torvic98">
+        <meta name="twitter:creator" content="@Torvic98">
+        <meta name="twitter:title" content="Víctor Martínez">
+        <meta name="twitter:description" content="Desarrollando el futuro">
+        <meta name="twitter:image" content="https://torvic98.github.io/assets/images/summary_large_image.jpg">
 	</head>
 	<body class="is-preload">
 
@@ -26,23 +33,34 @@
 					<section id="main">
 						<header>
 							<span class="avatar"><img src="https://www.gravatar.com/avatar/53eb40d10ab4220838a143d26a1bcc63?d=mp&s=122" alt="" /></span>
-							<h1>Víctor Martínez Batlle</h1>
+							<h1>Víctor Martínez</h1>
 							<p>Desarrollando el futuro</p>
 						</header>
 						<footer>
-							<ul class="icons">
+							<ul class="icons" id="icons">
 								<li><a href="https://twitter.com/torvic98" class="icon brands fa-twitter">Twitter</a></li>
                                 <li><a href="https://instagram.com/torvic98" class="icon brands fa-instagram">Instagram</a></li>
+                                <li><a href="https://open.spotify.com/user/principevictor" class="icon brands fa-spotify">Spotify</a></li>
                                 <li><a href="https://tiktok.com/@torvic98" class="icon brands fa-tiktok">TikTok</a></li>
                                 <li><a href="https://facebook.com/victor.martinez.59656" class="icon brands fa-facebook">Facebook</a></li>
                                 <li><a href="https://torvic98.tumblr.com" class="icon brands fa-tumblr">Tumblr</a></li>
                                 <li><a href="https://flickr.com/vm98" class="icon brands fa-flickr">Flickr</a></li>
+                                <li><a href="https://unsplash.com/@torvic98" class="icon brands fa-unsplash">Unsplash</a></li>
 								<li><a href="https://xdevelop.ml" class="icon brands fa-wordpress-simple">Wordpress</a></li>
+                                <li><a href="https://github.com/torvic98" class="icon brands fa-github">GitHub</a></li>
+                                <li><a href="https://trakt.tv/users/torvic98" class="icon-fa-trakt">Trakt.tv</a></li>
+                                <li><a href="http://goodreads.com/torvic98" class="icon brands fa-goodreads">Goodreads</a></li>
                                 <li><a href="https://medium.com/@torvic98" class="icon brands fa-medium">Medium</a></li>
                                 <li><a href="https://snapchat.com/add/torvic1998" class="icon brands fa-snapchat">Snapchat</a></li>
                                 <li><a href="https://youtube.com/c/V%C3%ADctorMart%C3%ADnez98" class="icon brands fa-youtube">YouTube</a></li>
                                 <li><a href="https://discord.com/channels/@me/491646573386924033" class="icon brands fa-discord">Discord</a></li>
+                                <li><a href="https://www.twitch.tv/torvic1998" class="icon brands fa-twitch">Twitch</a></li>
+                                <li><a href="https://steamcommunity.com/id/torvic98" class="icon brands fa-steam">Steam</a></li>
                                 <li><a href="https://pinterest.es/torvic98" class="icon brands fa-pinterest">Pinterest</a></li>
+                                <li><a href="https://soundcloud.com/torvic1998" class="icon brands fa-soundcloud">Soundcloud</a></li>
+                                <li><a href="https://www.linkedin.com/in/vmbatlle" class="icon brands fa-linkedin-in">LinkedIn</a></li>
+                                <li><a href="https://vmbatlle.github.io" class="icon far fa-briefcase">Work</a></li>
+                                <li><a href="#" onClick="showMore(event);" class="icon far fa-plus">See more</a></li>
 							</ul>
 						</footer>
 					</section>
@@ -58,8 +76,29 @@
 
 		<!-- Scripts -->
 			<script>
+                var iconsPageSize = 8;
+                var iconsShown = 0;
+                function showMore(e) {
+                   e.preventDefault();
+                   var ul = document.getElementById("icons");
+                   var items = ul.getElementsByTagName("li");
+                   
+                   iconsShown = iconsShown + iconsPageSize;
+                   for (var i = 0; i < Math.min(items.length, iconsShown) - 1; ++i) {
+                     items[i].classList.add("show");
+                   }
+                   if (iconsShown < items.length - 1) {
+                     items[items.length - 1].classList.add("show");
+                   } else {
+                     items[items.length - 1].classList.remove("show");
+                   }
+                }
+                
 				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					window.addEventListener('load', function(e) { 
+                        document.body.className = document.body.className.replace(/\bis-preload\b/, '');
+                        showMore(e);
+                    });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
